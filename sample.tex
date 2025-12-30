@@ -1,0 +1,84 @@
+\DocumentMetadata{
+  lang=en-US,
+  pdfstandard=ua-1,
+  testphase={phase-III,math,block,table,title}
+}
+\tagpdfsetup{table/header-rows={1}}
+
+\documentclass[12pt]{article}
+
+% \usepackage{fontspec}
+\usepackage{unicode-math} 
+% \setmainfont{Latin Modern Roman}
+% \setmathfont{Latin Modern Math}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[letterpaper,margin=.5in]{geometry}
+\usepackage[pdftitle=Title, pdflang=en-US]{hyperref}
+
+\thispagestyle{empty}
+
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+
+% \title{Title}
+% \maketitle
+
+\section{A section}
+
+Figure:
+\begin{center}
+\includegraphics[height=4cm,alt={Bearizona}]{bear.jpg}
+\end{center}
+
+Tabular environment:
+\begin{center}
+\begin{tabular}{|l|r|}
+\multicolumn{2}{c}{Example}\\
+Name & Value\\
+This & 11 \\
+That & 2
+\end{tabular}
+\end{center}
+
+Enumerate:
+
+\begin{enumerate}[start=7]
+\item Wolfs
+  \begin{enumerate}
+  \item gray
+  \item white
+  \end{enumerate}
+\item Bears
+\end{enumerate}
+
+\begin{theorem}
+If $x\in\mathbb{R}$, then $x^{2} \geq 0$. 
+\end{theorem}
+
+Displayed equation: 
+$$
+a:=\sum_{i=1}^n\frac{1}{i^2}.
+$$
+
+Matrix equation:
+\[
+\begin{pmatrix}0&1\\1&0\end{pmatrix}
+\begin{pmatrix}a&b\\c&d\end{pmatrix}
+=\left[
+\begin{matrix}c&d\\a&b\end{matrix}
+\right]
+\]
+
+Tikz:
+$$
+\begin{tikzpicture}
+\node (1) at (0,0) {$1$};
+\node (2) at (2,1) {$2$};
+\draw[->] (1) -- (2);
+\end{tikzpicture}
+$$
+
+\end{document}
