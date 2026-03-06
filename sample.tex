@@ -5,7 +5,7 @@
 }
 \tagpdfsetup{table/header-rows={1}}
 
-\documentclass[12pt]{article}
+\documentclass[11pt]{amsart}
 
 % \usepackage{fontspec}
 \usepackage{unicode-math} 
@@ -14,25 +14,31 @@
 
 \usepackage{graphicx}
 \usepackage{tikz}
-\usepackage{amsmath}
+% \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage[letterpaper,margin=.5in]{geometry}
 \usepackage[pdftitle=Title, pdflang=en-US,colorlinks=true, urlcolor=blue]{hyperref}
 
 \thispagestyle{empty}
 
-\newtheorem{theorem}{Theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
 
 \begin{document}
 
-% \title{Title}
-% \maketitle
+\title{ADA compliant document}
+\author{Alex Smart}
+
+\begin{abstract}
+This document gets a perfect accessibility score on Canvas.
+\end{abstract}
+
+\maketitle
 
 \section{A section}
 
-Figure:
-\begin{center}
-\includegraphics[height=4cm,alt={Bearizona}]{bear.jpg}
-\end{center}
 
 Tabular environment:
 \begin{center}
@@ -59,6 +65,18 @@ Enumerate:
 If $x\in\mathbb{R}$, then $x^{2} \geq 0$. 
 \end{theorem}
 
+\begin{proof}
+Anyone can see.
+\end{proof}
+
+\begin{proposition}
+The simpler the better.
+\end{proposition}
+
+\begin{definition}
+An object is \emph{large} if it is not small.
+\end{definition}
+
 Displayed equation: 
 $$
 a:=\sum_{i=1}^n\frac{1}{i^2}.
@@ -82,6 +100,17 @@ $$
 \end{tikzpicture}
 $$
 
+\begin{figure}[h]
+\includegraphics[height=4cm,alt={Bearizona}]{bear.jpg}
+\caption{Bearizona.}
+\end{figure}
+
 Link: \url{https://bearizona.com/}
+
+Citation:
+\cite{example2026}
+
+\bibliographystyle{plain}
+\bibliography{bib.bib}
 
 \end{document}
